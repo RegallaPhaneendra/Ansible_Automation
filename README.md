@@ -61,7 +61,7 @@ The project is structured around two primary roles: ''deploy'' and ''rollback''.
 
 ## Installation
 
-1. **Clone the repository:**
+1. **Clone the repository**
 2. **Configure `ansible.cfg`** 
 3. **Create the inventory file**
 
