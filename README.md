@@ -1,6 +1,6 @@
 # Ansible_Automation
 # Ansible Package Management
-This project demonstrate how to use ansible to efficiently manage software packages across different OS. It leverages Ansible's features to handle OS specific packages management and rollback capabilities. 
+This project demonstrate how to use ansible to efficiently manage software packages across different OS. It leverages Ansible's features to handle OS specific packages management and rollback capabilities.
 
 ## Table of Contents
 * [Project-structure](#project-structure)
