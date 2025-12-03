@@ -14,8 +14,8 @@ This project demonstrate how to use ansible to efficiently manage software packa
 ├── ansible.cfg
 ├── inventory
 ├── playbooks
-│   ├── deploy.yaml
-│   └── rollback.yaml
+│   ├── deploy.yml
+│   └── rollback.yml
 └── roles
     ├── deploy
     │   ├── README.md
