@@ -54,7 +54,7 @@ This project demonstrate how to use ansible to efficiently manage software packa
 ```
 
 ## How it Works
-The project is structured around two primary roles: 'deploy' and 'rollback'.
+The project is structured around two primary roles: ''deploy'' and ''rollback''.
 
 * **'deploy':** This role handles the installation of packages. It checks if the package is already installed, and then install the software.
 * **'rollback':** This role manages the removal of packages. It checks for the installation marker file(created during installation) before attempting to remove the package. This ensures that only installed are removed during rollback.
