@@ -1,0 +1,8 @@
+---
+- name: Start/Restart Service
+  service:
+    name: "{{package_name}}"
+    status: started
+    enable: yes 
+
+    # handlers file for webserver

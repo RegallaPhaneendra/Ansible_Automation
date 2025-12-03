@@ -1,0 +1,23 @@
+---
+- name: Check if installation mark file exists
+  stat:
+     path: "/tmp/{{package_name}}"
+  register: package_marker
+- name: Remove package (Ubuntu)
+  apt:
+     name: "{{ package_name }}"
+     state: absent
+  when: ansible_facts.os_family == 'Debian' and package_marker.stat.exists
+- name: Remove package (Amazon Linux)
+  yum:
+     name: "{{ package_name }}"
+     state: absent
+  when: ansible_facts.os_family == 'Amazon Linux' and package_marker.stat.exists
+- name: Remove installtion marker file
+  file:
+      path: "/tmp/{{ package_name }}"
+      state: absent
+  when: package_marker.stat.exists
+
+
+# tasks file for rollback

@@ -1,0 +1,21 @@
+---
+- name: Check if package is already installed
+  command: which {{ package_name }}
+  register: package_check
+  ignore_errors: true
+- name: Install package
+  apt:
+     name: "{{package_name}}"
+     state: present 
+  when: ansible_facts.os_family == 'Debian' and package_check.rc != 0
+- name: Install package
+  yum:
+     name: "{{package_name}}"
+     state: present 
+  when: ansible_facts.os_family == 'Amazon Linux' and package_check.rc != 0
+  notify: Start/Restart Service 
+- name: Create installation marker file
+  file:
+     path: "/tmp/{{package_name}}"
+     state: touch
+     mode: '0644'
